@@ -29,10 +29,6 @@ for line in fhand:
     words = line.split()
     if len(words) < 3 or words[0] != 'From':
         continue
-    else:
-        if words[2] not in dictionary_days:
-            dictionary_days[words[2]] = 1       # First entry
-        else:
-            dictionary_days[words[2]] += 1      # Additional counts
-
+    di[words[2]] = dictionary_days.get(words[2],0) + 1
 print(dictionary_days)
+    
